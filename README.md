@@ -33,6 +33,11 @@ $ xcodebuild -project ./NeverGonnaGiveYouUp.xcodeproj -target NeverGonnaGiveYouU
 $ sudo nvram boot-args=kext-dev-mode=1
 $ sudo reboot
         ```
+        
+    > Note for VirtualBox users: `nvram` util doesn't work on a guest OS, so use VBoxManage on your host instead:
+    ```shell
+    $ VBoxManage setextradata "$YOUR_VM_NAME" VBoxInternal2/EfiBootArgs kext-dev-mode=1
+    ```
 
     * On OS X 10.11 (El Capitan) there is no «kext-dev-mode» so you must disable System Integrity Protection to play with unsigned kexts. You can learn how to do this [here](http://internals.exposed/blog/dtrace-vs-sip.html). I guess this one should be enough:
 
