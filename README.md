@@ -4,6 +4,10 @@ A kernel extension that prevents a userland agent from being killed[^1]. It's bu
 
 [^1]: By not delivering any destructive signals like SIGKILL or SIGINT
 
+## Compatibility
+
+Tested on OS X 10.10[.5] but should work on 10.11 as well (with SIP disabled).
+
 ## Usage
 
 #### Building
