@@ -65,7 +65,20 @@ $ sudo kextload NeverGonnaGiveYouUp.kext
 
 #### In the wild
 
-Now launch the agent and try to kill it some way. If you open Console.app, you'll see a handy message like:
+Now launch the agent and try to kill it some way
+
+```shell
+$ pgrep nggyu.agent
+# 7612
+$ kill 7612
+# kill: (7612) - Operation not permitted
+$ kill -9 7612
+# kill: (7612) - Operation not permitted
+$ sudo killall nggyu.agent
+# killall: warning: kill (7612) - Operation not permitted
+```
+
+If you open Console.app, you'll see a handy message like:
 
 ```
 7:15:01 AM kernel: NGGYU: User 501 tried to kill our agent with signal 9. What a pity!
